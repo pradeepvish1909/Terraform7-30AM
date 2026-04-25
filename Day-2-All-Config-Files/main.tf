@@ -6,6 +6,12 @@ resource "aws_instance" "dev" {
   }
 } 
 
+resource "aws_vpc" "name" {
+    cidr_block = "10.0.0.0/16"
+    tags = {
+      Name = "dev"
+    }
+}
 # resource "aws_instance" "test" {
 #   ami = var.ami_id
 #   instance_type = var.instance_type
@@ -14,9 +20,3 @@ resource "aws_instance" "dev" {
 #   }
 # }
 
-resource "aws_vpc" "name" {
-    cidr_block = "10.0.0.0/16"
-    tags = {
-      Name = "dev"
-    }
-}
